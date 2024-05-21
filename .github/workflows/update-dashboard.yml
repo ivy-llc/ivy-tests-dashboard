@@ -28,4 +28,4 @@ jobs:
           git commit -m "Auto-update dashboard with latest results"
           git push
         env:
-          PAT: ${{ secrets.DEV_BOT_PAT }}
+          GITHUB_TOKEN: ${{ secrets.DEV_BOT_PAT }}
