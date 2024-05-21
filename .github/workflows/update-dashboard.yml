@@ -5,7 +5,8 @@ on:
     - cron: "2 0 * * *"
   push:
 permissions:
-  actions: write
+  actions: read
+  contents: write
 jobs:
   update-dashboard:
     runs-on: ubuntu-latest
@@ -28,4 +29,4 @@ jobs:
           git config --global user.name "ivy-dev-bot"
           git add README.md
           git commit -m "Auto-update dashboard with latest results"
-          git push https://ivy-dev-bot:${{ secrets.DEV_BOT_PAT }}@github.com/Transpile-AI/ivy.git
+          git push
