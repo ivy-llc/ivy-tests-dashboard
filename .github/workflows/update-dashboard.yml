@@ -22,6 +22,7 @@ jobs:
         run: |
           pip install pymongo
           python update_dashboard.py --db-key ${{ secrets.IVY_DASHBOARD_DB_KEY }}
+          git config --global user.email "hello@transpile-ai.com"
           git config --global user.name "ivy-dev-bot"
           git add README.md
           git commit -m "Auto-update dashboard with latest results"
