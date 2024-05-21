@@ -9,7 +9,7 @@ permissions:
   contents: write
 jobs:
   update-dashboard:
-    runs-on: ubuntu-latest-8-core
+    runs-on: large-runner
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
