@@ -28,4 +28,4 @@ jobs:
           git config --global user.name "ivy-dev-bot"
           git add README.md
           git commit -m "Auto-update dashboard with latest results"
-          git push
+          git push https://ivy-dev-bot:${{ secrets.DEV_BOT_PAT }}@github.com/Transpile-AI/ivy.git
