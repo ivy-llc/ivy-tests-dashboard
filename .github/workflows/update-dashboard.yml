@@ -19,6 +19,8 @@ jobs:
           python-version: '3.10'
 
       - name: Update Dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEV_BOT_PAT }}
         run: |
           pip install pymongo
           python update_dashboard.py --db-key ${{ secrets.IVY_DASHBOARD_DB_KEY }}
@@ -27,5 +29,3 @@ jobs:
           git add README.md
           git commit -m "Auto-update dashboard with latest results"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEV_BOT_PAT }}
