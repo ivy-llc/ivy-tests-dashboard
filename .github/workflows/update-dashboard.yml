@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          token: ${{secrets.GITHUB_TOKEN}}
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -26,6 +24,8 @@ jobs:
           python update_dashboard.py --db-key ${{ secrets.IVY_DASHBOARD_DB_KEY }}
           git config --global user.email "hello@transpile-ai.com"
           git config --global user.name "ivy-dev-bot"
+          git config --global credential.helper store
+          git config --global core.askPass ""
           git add README.md
           git commit -m "Auto-update dashboard with latest results"
           git push
