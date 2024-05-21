@@ -1,5 +1,7 @@
 # Ivy Test Dashboard
 
+### Last updated: 2024-05-21
+
 <div style='margin-top: 35px; margin-bottom: 20px; margin-left: 25px;'>
 <details>
 <summary style='margin-right: 10px;'><span style='font-size: 1.5em; font-weight: bold'>Ivy Functional API - Core</span></summary>
@@ -4359,3 +4361,5 @@
 
 </div>
 
+
+This dashboard is automatically updated nightly. If it hasn't been updated in within the last couple of days, feel free to raise an issue on the ivy repo.
