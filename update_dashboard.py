@@ -1,5 +1,6 @@
 import argparse
 from collections import defaultdict
+import datetime
 from pymongo import MongoClient
 
 
@@ -68,7 +69,11 @@ if __name__ == "__main__":
     sorted_paths = sorted(test_results.keys())
     sorted_test_results = {path: dict(sorted(test_results[path].items())) for path in sorted_paths}
 
+    now = datetime.datetime.now()
+    current_date = now.date()
+
     readme_content = "# Ivy Test Dashboard\n\n"
+    readme_content += f"### Last updated: {current_date}\n\n"
 
     for base, path_functions in sorted_test_results.items():
         readme_content += f"<div style='margin-top: 35px; margin-bottom: 20px; margin-left: 25px;'>\n"
@@ -98,6 +103,7 @@ if __name__ == "__main__":
             readme_content += "</div>\n\n"
         readme_content += "</details>\n\n"
         readme_content += "</div>\n\n"
+    readme_content += "\nThis dashboard is automatically updated nightly. If it hasn't been updated in within the last couple of days, feel free to raise an issue on the ivy repo."
 
     # Write the content to README.md
     with open("README.md", "w") as f:
