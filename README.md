@@ -1,2 +1,3 @@
-# ivy-tests-dashboard
-Dashboard to show Ivy's test results
+# Welcome to the Ivy Test Dashboard!
+
+[View Dashboard](DASHBOARD.md)
