@@ -105,8 +105,10 @@ if __name__ == "__main__":
         readme_content += "</div>\n\n"
     readme_content += "\nThis dashboard is automatically updated nightly. If it hasn't been updated in within the last couple of days, feel free to raise an issue on the ivy repo."
 
-    print(readme_content)
-
-    # Write the content to README.md
     with open("README.md", "w") as f:
         f.write(readme_content)
+
+    with open("README.md", "r") as f:
+        lines = f.readlines()
+        for line in lines:
+            print(line)
