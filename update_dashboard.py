@@ -77,22 +77,11 @@ if __name__ == "__main__":
 
     for base, path_functions in sorted_test_results.items():
         readme_content += f"<div style='margin-top: 35px; margin-bottom: 20px; margin-left: 25px;'>\n"
-
-        # default the final drop-down to be open
-        if base == "TensorFlow Frontends":
-            readme_content += f"<details open>\n<summary><span style='font-size: 1.5em; font-weight: bold'>{base}</span></summary>\n\n"
-        else:
-            readme_content += f"<details>\n<summary style='margin-right: 10px;'><span style='font-size: 1.5em; font-weight: bold'>{base}</span></summary>\n\n"
+        readme_content += f"<details>\n<summary style='margin-right: 10px;'><span style='font-size: 1.5em; font-weight: bold'>{base}</span></summary>\n\n"
 
         for path, functions in path_functions.items():
             readme_content += f"<div style='margin-top: 7px; margin-botton: 1px; margin-left: 25px;'>\n"
-
-            # default one the last test sets to be open
-            if base == "TensorFlow Frontends" and path == "test_tensor.py":
-                readme_content += f"<details open>\n<summary><span style=''>{path}</span></summary>\n\n"
-            else:
-                readme_content += f"<details>\n<summary><span style=''>{path}</span></summary>\n\n"
-
+            readme_content += f"<details>\n<summary><span style=''>{path}</span></summary>\n\n"
             readme_content += "| Function | numpy | jax | tensorflow | torch |\n"
             readme_content += "|----------|-------|-----|------------|-------|\n"
 
