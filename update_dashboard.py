@@ -63,7 +63,8 @@ if __name__ == "__main__":
         workflow_link = record['workflow_link']
         color = color_codes.get(outcome, 'yellow')
         button = f"[![{outcome}](https://img.shields.io/badge/{outcome}-{color})]({workflow_link})"
-        test_results[base][path][function][backend] = button
+        if workflow_link not in [None, "null"]:
+            test_results[base][path][function][backend] = button
 
     # sort the paths & functions
     sorted_paths = sorted(test_results.keys())
